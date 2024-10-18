@@ -25,11 +25,23 @@ java {
 
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+    maven {
+        name = "Ladysnake Mods"
+        url = uri("https://maven.ladysnake.org/releases")
+        content {
+            includeGroup("io.github.ladysnake")
+            includeGroup("org.ladysnake")
+            includeGroupByRegex("dev\\.onyxstudios.*")
+        }
+    }
+
+    maven("https://maven.isxander.dev/releases") {
+        name = "Xander Maven"
+    }
+
+    maven("https://maven.terraformersmc.com/") {
+        name = "Terraformers"
+    }
 }
 
 dependencies {
@@ -40,6 +52,10 @@ dependencies {
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
 
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
+
+    include(modImplementation("io.github.0x3c50.renderer:renderer-${project.property("renderer_version")}")!!)
+    modImplementation("dev.isxander:yet-another-config-lib:${project.property("yacl_version")}")
+    modImplementation("com.terraformersmc:modmenu:${property("modmenu_version")}")
 }
 
 tasks.processResources {

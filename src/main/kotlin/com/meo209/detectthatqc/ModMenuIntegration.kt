@@ -22,13 +22,13 @@ class ModMenuIntegration : ModMenuApi {
                     .option(Option.createBuilder<Int>()
                         .name(Text.of("Scan range"))
                         .description(OptionDescription.of(Text.of("Range to scan for blocks")))
-                        .binding(10, QCDConfig::scanRange) { QCDConfig.scanRange = it }
+                        .binding(10, Config::scanRange) { Config.scanRange = it }
                         .controller(IntegerFieldControllerBuilder::create)
                         .build())
                     .option(Option.createBuilder<Color>()
                         .name(Text.of("Highlight Color"))
                         .description(OptionDescription.of(Text.of("Color to highlight detected blocks")))
-                        .binding(Color(250, 0, 250, 100), QCDConfig::highlightBlockColor) { QCDConfig.highlightBlockColor = it }
+                        .binding(Color(250, 0, 250, 100), Config::highlightBlockColor) { Config.highlightBlockColor = it }
                         .controller(ColorControllerBuilder::create)
                         .build())
                     .build())

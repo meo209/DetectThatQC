@@ -3,7 +3,7 @@
   "id": "detectthatqc",
   "version": "${version}",
   "name": "DetectThatQC",
-  "description": "Displays a box around blocks that are QC-powered. ",
+  "description": "Displays a box around blocks that are QC-powered.",
   "authors": [],
   "contact": {},
   "license": "GPL-3.0",
@@ -11,10 +11,10 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.meo209.detectthatqc.client.DetectThatQCClient"
+      "com.meo209.detectthatqc.DetectThatQCClient"
     ],
-    "main": [
-      "com.meo209.detectthatqc.DetectThatQC"
+    "modmenu": [
+      "com.meo209.detectthatqc.ModMenuIntegration"
     ]
   },
   "depends": {
