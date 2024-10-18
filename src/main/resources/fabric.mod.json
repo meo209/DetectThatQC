@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "detectthatqc",
+  "version": "${version}",
+  "name": "DetectThatQC",
+  "description": "Displays a box around blocks that are QC-powered. ",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/detectthatqc/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.meo209.detectthatqc.client.DetectThatQCClient"
+    ],
+    "main": [
+      "com.meo209.detectthatqc.DetectThatQC"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
